@@ -3,35 +3,35 @@ package lab1;
 import java.util.Random;
 
 public class Prog1 {
-    public static void main(String[] args){
 
-        System.out.println("Task A");
+    public static void main(String[] args) {
+
+        // TASK A
         Random random = new Random();
-        int x =  random.nextInt(1,9);
-        int y = random.nextInt(3,14);
-        while (true){
-            y = random.nextInt(3,14);
-            if(y<3 || y>14){
-                System.out.println("Something"+y);
-                break;
-            }
-            else
-                System.out.println(y);
-        }
 
+        // generate a number between 1 and 9
+        int x = random.nextInt(1, 10);
+        // generate a number between 3 and 14
+        int y = random.nextInt(3, 15);
 
-        System.out.printf("%.2f",Math.pow(Math.PI,x));
-        System.out.println();
-        System.out.printf("%.2f",Math.pow(y,Math.PI));
+        double xResult = Math.pow(Math.PI, x);
 
-        System.out.println("\nTask B");
-        //1.27,   3.881,  9.6
-        float float1 =1.27f;
-        float float2 = 3.881f;
-        float float3=9.6f;
-        int intSum = (int)(float1+float2+float3);
-        System.out.println(float1+"+"+float2+"+"+float3+"="+intSum);
-        int roundedIntSum = Math.round(float1+float2+float3);
-        System.out.println("The rounded sum is "+roundedIntSum);
+        // get a random number in the range 3 - 14
+        double yResult = Math.pow(Math.PI, y);
+        System.out.printf("π^%d = %.2f\n", x, xResult);
+        System.out.printf("π^%d = %.2f\n", y, yResult);
+
+        // TASK B
+        float a = 1.27f;
+        float b = 3.881f;
+        float c = 9.6f;
+        // 1
+        int sum = (int) (a + b + c);
+        System.out.println(sum);
+
+        // 2
+        int sum2 = Math.round(a + b + c);
+        System.out.println(sum2);
+
     }
 }
