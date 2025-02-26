@@ -2,6 +2,7 @@ package lab1;
 
 import java.util.Random;
 
+
 public class Prog1 {
 
     public static void main(String[] args){
@@ -11,9 +12,9 @@ public class Prog1 {
         Random random = new Random();
 
         // generate a number between 1 and 9
-        int x = random.nextInt(9)+1;
+        int x = random.nextInt(1,10);
         // generate a number between 3 and 14
-        int y = random.nextInt(14) + 3;
+        int y = random.nextInt(3,15) ;
 
         double xResult = Math.pow(Math.PI, x);
 
