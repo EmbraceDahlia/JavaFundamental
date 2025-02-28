@@ -1,5 +1,4 @@
-package lab2.problem4;
-
+package lab2.problem3;
 
 public class EventDriver {
 

@@ -1,4 +1,4 @@
-package lab2.problem4;
+package lab2.problem3;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
