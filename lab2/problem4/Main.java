@@ -26,10 +26,10 @@ public class Main {
         System.out.println("Enter R for Rectangle");
         System.out.println("Enter T for Triangle");
 
-        String input = sc.nextLine();
+        String input = sc.nextLine().trim().toLowerCase();
 
         switch (input) {
-            case "C": {
+            case "c": {
                 System.out.println("Enter the radius of the Circle");
                 double radius = Double.valueOf(sc.nextLine());
                 CircleRecord circle = new CircleRecord(radius);
@@ -38,7 +38,7 @@ public class Main {
                 break;
             }
 
-            case "R": {
+            case "r": {
                 System.out.println("Enter the width of the Rectangle");
                 double width = Double.valueOf(sc.nextLine());
                 System.out.println("Enter the height of the Rectangle");
@@ -49,7 +49,7 @@ public class Main {
                 break;
             }
 
-            case "T": {
+            case "t": {
                 System.out.println("Enter the height of the Triangle");
                 double height = Double.valueOf(sc.nextLine());
                 System.out.println("Enter the base of the Triangle");
@@ -61,7 +61,7 @@ public class Main {
             }
 
             default:
-                System.out.println("Invalid Input, run app again and enter valid input");
+                System.out.println("Invalid Input, please enter a valid choice (C, R, or T).");
                 break;
         }
     }
