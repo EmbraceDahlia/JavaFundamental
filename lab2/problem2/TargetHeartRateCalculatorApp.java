@@ -27,5 +27,6 @@ public class TargetHeartRateCalculatorApp {
         HeartRates heartRates = new HeartRates(firstName, lastName, dateOfBirth);
         heartRates.calculateTargetHeartRate();
         System.out.println(heartRates.toString());
+        s.close();
     }
 }
