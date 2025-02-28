@@ -9,20 +9,23 @@ public class Event {
     private String eventName;
     private LocalDate date;
     private LocalTime time;
-    private ZoneId timeZone;
+    private ZonedDateTime dateTimeWithZone;
 
-    private static final DateTimeFormatter DATE_FORMATTER =
-        DateTimeFormatter.ofPattern("EEEE, MMMM d yyyy @ HH:mm'['VV']'");
+    private final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter
+            .ofPattern("EEEE, MMMM d yyyy @ HH:mm'['VV']'");
 
-    private static final String[] TIME_ZONES = {
-        "America/Chicago", "America/Indiana/Indianapolis",
-        "America/Santiago", "America/Phoenix"
+    private final String[] TIME_ZONES = {
+            "America/Chicago", "America/Indiana/Indianapolis",
+            "America/Santiago", "America/Phoenix"
     };
 
-    public void setEventName(String eventName) { 
+    public void setEventName(String eventName) {
         this.eventName = eventName.trim();
     }
-    public String getEventName() { return eventName; }
+
+    public String getEventName() {
+        return this.eventName;
+    }
 
     public void setDate(String dateInput) {
         try {
@@ -30,9 +33,6 @@ public class Event {
         } catch (Exception e) {
             System.out.println("Invalid date format! Use d/M/yyyy.");
         }
-    }
-    public LocalDate getDate() { 
-        return date; 
     }
 
     public void setTime(String timeInput) {
@@ -42,16 +42,6 @@ public class Event {
             System.out.println("Invalid time format! Use HH:mm (24-hour format).");
         }
     }
-    public LocalTime getTime() { 
-        return time;
-     }
-
-    public void setTimeZone(String timeZone) {
-        this.timeZone = ZoneId.of(timeZone);
-    }
-    public ZoneId getTimeZone() { 
-        return timeZone;
-     }
 
     public void createEvent() {
         Scanner scanner = new Scanner(System.in);
@@ -65,7 +55,7 @@ public class Event {
         System.out.print("Enter time (HH:mm, 24-hour format): ");
         setTime(scanner.nextLine());
 
-        this.timeZone = ZoneId.systemDefault();
+        dateTimeWithZone = ZonedDateTime.of(date, time, ZoneId.systemDefault());
 
         // Display event details
         showEventDetails();
@@ -85,18 +75,14 @@ public class Event {
     }
 
     private void showEventDetails() {
-        ZonedDateTime eventDateTime = ZonedDateTime.of(date, time, timeZone);
-        String eventDay = eventDateTime.format(DateTimeFormatter.ofPattern("EEEE"));
-        System.out.printf("\nEvent: %s%nDay: %s%nDate & Time: %s%n", 
-            eventName, eventDay, eventDateTime.format(DATE_FORMATTER));
-
-
+        System.out.println(this.getEventName());
+        System.out.printf("%s\n", this.dateTimeWithZone.format(DATE_FORMATTER));
     }
 
     private void checkLeapYear() {
-        System.out.println(date.isLeapYear() 
-            ? "This event is in a Leap Year." 
-            : "This event is NOT in a Leap Year.");
+        System.out.println(date.isLeapYear()
+                ? "This event is in a Leap Year."
+                : "This event is NOT in a Leap Year.");
     }
 
     private int daysUntilEvent() {
@@ -112,13 +98,15 @@ public class Event {
 
         System.out.print("\nEnter selection (0-3): ");
         int selectedIndex;
-        
+
         try {
             selectedIndex = Integer.parseInt(scanner.nextLine());
             if (selectedIndex < 0 || selectedIndex >= TIME_ZONES.length) {
                 throw new Exception();
             }
-            setTimeZone(TIME_ZONES[selectedIndex]);
+            // setTimeZone(TIME_ZONES[selectedIndex]);
+            ZoneId newZone = ZoneId.of(TIME_ZONES[selectedIndex]);
+            this.dateTimeWithZone = dateTimeWithZone.withZoneSameInstant(newZone);
             showEventDetails();
         } catch (Exception e) {
             System.out.println("Invalid selection! Keeping the current timezone.");
