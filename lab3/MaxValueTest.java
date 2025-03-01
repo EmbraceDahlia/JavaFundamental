@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MaxValueTest {
 
-    final MaxValue newMax = new MaxValue();
-
     @Test
     void testFindMaxValue() {
 
