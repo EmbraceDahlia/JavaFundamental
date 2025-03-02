@@ -15,3 +15,13 @@ Group Members
         problem3 - Has solution for problem 3
         problem4 - Has solution for problem 4
         problem5 - Has solution for problem 5
+    lab3 - Has solutions for Lab 3 assignments
+        problem1 - Has solution for problem 1
+        problem2 - Has solution for problem 2
+        problem3 - Has solution for problem 3
+        problem4 - Has solution for problem 4
+        problem5 - Has solution for problem 5
+        problem6 - Has solution for problem 6
+
+
+
