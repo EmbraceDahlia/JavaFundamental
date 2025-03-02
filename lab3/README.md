@@ -1,6 +1,6 @@
 # Lab 3 home work solutions
 
-- This folder contains solutions to lab 3
+- Solutions to lab3 homework. See table for the files for the respective questions
 
 | Question | File with solution                     |
 | -------- | -------------------------------------- |
