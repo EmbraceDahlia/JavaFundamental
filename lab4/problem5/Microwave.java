@@ -15,6 +15,7 @@ public class Microwave implements Appliance {
         return "Heating food at power level: " + powerLevel + ".";
     }
 
+    @Override
     public void performFunction() {
         System.out.println("Heating food at power level: " + powerLevel + ".");
     }
