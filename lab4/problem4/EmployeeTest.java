@@ -1,5 +1,6 @@
 package lab4.problem4;
 
+//Driver class
 public class EmployeeTest {
     public static void main(String[] args) {
         Employee emp1 = new CommissionEmployee("Gideon", "Bamuleseyo", "124456", 100, 0.5);
@@ -14,7 +15,11 @@ public class EmployeeTest {
         }
 
         System.out.println("\nEmployee with Max Salary");
-        System.out.println(findMaxSalary(employees).toString());
+        try {
+            System.out.println(findMaxSalary(employees).toString());
+        } catch (Exception e) {
+            System.out.println("Can not find employee with max salary, please check the input");
+        }
     }
 
     public static Employee findMaxSalary(Employee[] col) {
@@ -22,16 +27,18 @@ public class EmployeeTest {
             throw new IllegalArgumentException("Employee array must not be null or empty");
         }
 
-        Employee maxSalaryEmployee = col[0];
-        double maxSalary = maxSalaryEmployee.getPayment();
+        Employee maxSalaryEmployee = null;
+        double maxSalary = 0;
         for (int i = 0; i < col.length; i++) {
-            double salary = col[i].getPayment();
-            if (salary > maxSalary) {
-                maxSalary = salary;
-                maxSalaryEmployee = col[i];
+            if (col[i] != null) {
+                double salary = col[i].getPayment();
+                if (salary > maxSalary) {
+                    maxSalary = salary;
+                    maxSalaryEmployee = col[i];
+                }
             }
-        }
 
+        }
         return maxSalaryEmployee;
     }
 }

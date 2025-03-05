@@ -11,6 +11,7 @@ public class Refrigerator implements Appliance {
         return temperature;
     }
 
+    @Override
     public void performFunction() {
         System.out.println("Cooling items at temperature: " + temperature + "°C.");
     }
