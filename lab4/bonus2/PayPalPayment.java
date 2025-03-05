@@ -1,4 +1,4 @@
-package lab4.Bonuses.Bonus2;
+package lab4.bonus2;
 class PayPalPayment implements QuickPayInterface {
     private final String email;
 

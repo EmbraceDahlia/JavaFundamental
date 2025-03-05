@@ -18,7 +18,7 @@ Why These Classes?
 
 What Did We Learn from This?
 
-Flexibility – Adding new payment methods (e.g., BankTranfers) just requires a new class that follows the QuickPay interface. No need to touch existing code.
+Flexibility – Adding new payment methods (e.g., BankTransfers) just requires a new class that follows the QuickPay interface. No need to touch existing code.
 
 Better Organization – Instead of stuffing all logic into Main, each class handles what it knows best. Payments are handled by payment classes, while Main just facilitates the process.
 

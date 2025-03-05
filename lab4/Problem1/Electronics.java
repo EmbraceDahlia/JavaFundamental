@@ -1,4 +1,4 @@
-package lab4.Problem1;
+package lab4.problem1;
 
 public class Electronics extends Product {
    private int warranty;
