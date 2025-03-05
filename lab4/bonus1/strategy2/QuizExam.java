@@ -1,4 +1,4 @@
-package lab4.bonus1.strategy1;
+package lab4.bonus1.strategy2;
 
 import java.time.LocalDate;
 
@@ -23,6 +23,7 @@ public class QuizExam extends Exam {
     public boolean equals(Object ob) {
         if (ob == null) return false;
         if (getClass() != ob.getClass()) return false;
+//        if(!(ob instanceof QuizExam)) return false;
         QuizExam qe = (QuizExam) ob;
         return qe.getExamContent().equals(getExamContent()) &&
                 qe.getDateAdministered().equals(getDateAdministered()) &&

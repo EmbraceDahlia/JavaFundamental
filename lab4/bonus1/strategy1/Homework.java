@@ -1,4 +1,6 @@
-package lab4.bonus1.strategy2;
+package lab4.bonus1.strategy1;
+
+import lab4.bonus1.strategy2.Exam;
 
 public class Homework {
 
@@ -21,7 +23,7 @@ public class Homework {
     @Override
     public boolean equals(Object ob) {
         if (ob == null) return false;
-        if (getClass() != ob.getClass()) return false;
+        if(!(ob instanceof Homework)) return false;
         Homework h = (Homework) ob;
         return h.labTitle.equals(labTitle) && h.score == score;
     }

@@ -1,7 +1,7 @@
 package lab4.bonus1.strategy3;
 
 import lab4.bonus1.Grade;
-import lab4.bonus1.strategy1.QuizExam;
+import lab4.bonus1.strategy2.QuizExam;
 
 import java.time.LocalDate;
 

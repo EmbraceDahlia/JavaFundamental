@@ -1,4 +1,4 @@
-package lab4.bonus1.strategy1;
+package lab4.bonus1.strategy2;
 
 import java.time.LocalDate;
 
@@ -25,10 +25,11 @@ public class Exam {
         return this.score;
     }
 
+    //Strategy 1 - instanceof
     @Override
     public boolean equals(Object ob) {//Case 1
         if(ob == null) return false;
-        if(!(ob instanceof Exam)) return false;
+        if (getClass() != ob.getClass()) return false;
         Exam e = (Exam)ob;
         return e.examContent.equals(examContent) && e.dateAdministered.equals(dateAdministered) && e.score==score;
     }
