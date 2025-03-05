@@ -1,5 +1,12 @@
 package lab4.bonus1;
 
+import lab4.bonus1.strategy1.Exam;
+import lab4.bonus1.strategy1.MidtermExam;
+import lab4.bonus1.strategy1.QuizExam;
+import lab4.bonus1.strategy2.Homework;
+import lab4.bonus1.strategy2.HomeworkWithBonus;
+import lab4.bonus1.strategy3.FinalExamWithQuiz;
+
 import java.time.LocalDate;
 
 public class ExamManagement {
@@ -11,9 +18,8 @@ public class ExamManagement {
         Exam e2 = new QuizExam("Lesson 1 to 4",now,10,20);
         System.out.println(e.equals(e2));
         Exam e3 =new Exam("Lesson 1 to 5",now,100);
-        Exam e4 =new MidtermExam("Lesson 1 to 5",now,100,70);
+        Exam e4 =new MidtermExam("Lesson 1 to 6",now,100,70);
         System.out.println(e3.equals(e4));
-        //Strategy 1 just compare the instances of the classes are the same.
 
         //Strategy 2
         Homework h1 = new Homework("Lab4",20);

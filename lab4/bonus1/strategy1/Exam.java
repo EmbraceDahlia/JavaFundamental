@@ -1,4 +1,4 @@
-package lab4.bonus1;
+package lab4.bonus1.strategy1;
 
 import java.time.LocalDate;
 
