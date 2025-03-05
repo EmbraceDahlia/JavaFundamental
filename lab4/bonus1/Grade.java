@@ -1,4 +1,4 @@
-package lab4.exam;
+package lab4.bonus1;
 
 public enum Grade {
     A,

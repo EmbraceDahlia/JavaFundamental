@@ -1,6 +1,4 @@
-package lab4.exam;
-
-import java.time.LocalDate;
+package lab4.bonus1;
 
 public class Homework {
 
