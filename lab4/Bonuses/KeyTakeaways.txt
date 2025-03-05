@@ -14,7 +14,7 @@ Why These Classes?
 
 3.  PaymentContext – This is like the cashier of the system. It doesn’t care how you pay; it just takes your payment method and executes it. It allows the system to switch between payment strategies dynamically.
 
-4️⃣ Main (User Interaction & Control Center) – This handles user input, helps them choose a payment method. It keeps the program running smoothly and avoids unnecessary complexity.
+4️. Main (User Interaction & Control Center) – This handles user input, helps them choose a payment method. It keeps the program running smoothly and avoids unnecessary complexity.
 
 What Did We Learn from This?
 
