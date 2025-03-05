@@ -1,4 +1,4 @@
-package lab4.Bonus2;
+package lab4.Bonuses.Bonus2;
 
 class CreditCardPayment implements QuickPayInterface {
     private final String cardNumber;

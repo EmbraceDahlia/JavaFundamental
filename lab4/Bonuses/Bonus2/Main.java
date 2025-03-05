@@ -1,4 +1,4 @@
-package lab4.Bonus2;
+package lab4.Bonuses.Bonus2;
 import java.util.Scanner;
 
 public class Main {
