@@ -1,0 +1,8 @@
+In this Exam Management system, we used inheritance for the Quiz Exam, Midterm Exam and Final Exam to inherit from the parent Exam class.
+We also have another Homework and HomeworkWithBonus hierarchy.
+We also overrode equals() method to compare between different objects.
+We used all strategies 1, 2 and 3 for the equals() method.
+By means of Strategy 1, we did compare Exam and QuizExam by using instanceOf.
+Strategy 2, we compare Homework and HomeworkWithBonus by using getClass Method. So, the classes we compare need to be exactly the same and no more Asymmetry problem.
+Strategy 3, the comparison is between FinalExam and FinalExamWithQuiz. And we didn't use hierarchy between those 2 classes so that we can implement separate equals() methods.
+All the test cases are carried out in the ExamManagement class.
