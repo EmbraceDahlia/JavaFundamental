@@ -6,27 +6,16 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
       
-        System.out.println("Welcome to Quick pay:\n");
-          while (true) {
-            System.out.println("Please select a payment option:");
-            int userOption = sc.nextInt();
-            sc.nextLine();
-            
-            if (userOption == 1 || userOption == 2 || userOption == 3) break;
-            System.out.println("Invalid input! Please enter 1, 2, or 3.");
-        }
-
+        System.out.println("Welcome to Quick pay:");
+        System.out.println("Please select a payment option:");
         System.out.println("1 Card Payment");
         System.out.println("2 PayPal");
         System.out.println("3 Mobile Money");
-
         int userOption = sc.nextInt();
         sc.nextLine();
    
         PaymentContext context = new PaymentContext();
         String paymentDetails = "";
-
-
 
         switch(userOption){
             case 1:
@@ -55,7 +44,7 @@ public class Main {
         }
 
         
-        System.out.println("\nEnter amount in USD:");
+        System.out.println("Enter amount in USD:");
         int amount = sc.nextInt();
         sc.nextLine(); 
         

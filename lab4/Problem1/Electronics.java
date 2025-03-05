@@ -16,8 +16,8 @@ public class Electronics extends Product {
         return super.getPrice() + warrantyCost;
     }
 
-    @Override
-    public String toString() {
+    // @Override
+    public String toStrings() {
         return super.toString() + ", Warranty: " + warranty + " months, Warranty Cost: " + warrantyCost + ", Final Price: " + getPrice();
 
     }

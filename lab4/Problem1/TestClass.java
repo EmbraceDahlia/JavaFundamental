@@ -7,7 +7,7 @@ public class TestClass {
         products[1] = new Furniture("Chair",80.0,"Leather", 20);
         products[2] = new Electronics("Monitor", 500.0, 12, 40.0);
         products[3] = new Clothing("Dress", 40.0, "Lv", 15);
-        products[4] = new Furniture("Sofa", 500.0, "Leather", 40.0);
+        products[4] = new Product("Sofa", 500.0);
 
 
         for(Product p: products){
@@ -19,15 +19,17 @@ public class TestClass {
 
     }
 
-    public static double sumProducts(Product[] col) {
+    public static double sumProducts(Product[] col)  {
+
+        if(col == null) return 0;
         double sum = 0;
-        if (col != null) {
-            for (Product p : col) {
-                if (p != null) {
-                    sum += p.getPrice();
-                }
+
+        for (Product p : col) {
+            if (p != null) {
+                sum += p.getPrice();
             }
         }
+
         return sum;
     }
 }
