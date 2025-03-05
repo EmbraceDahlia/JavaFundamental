@@ -14,6 +14,7 @@ public class EmployeeManagement {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Do you want to see the total salary of your department? Please enter 'Y' to check it out:");
         String ans = scanner.next();
+        scanner.close();
         if(ans.equalsIgnoreCase("y")) {
             double totalSalary = 0;
             int totalEmployee = 0;
