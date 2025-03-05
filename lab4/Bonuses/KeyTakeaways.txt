@@ -1,0 +1,30 @@
+Key Takeaways from the Payment Strategy Plan
+
+When designing the payment system, the main goal was to make it flexible, scalable, and easy to maintain. Instead of hardcoding different payment methods into a single class, we used the Strategy Pattern way to allow different payment options to be swapped in and out without affecting the rest of the system.
+Why These Classes?
+
+1️. QuickPay (Interface) – This acts as a blueprint for all payment methods. Every payment method must implement a pay() method (to process payments). This ensures consistency across all payment types.
+
+2.  Concrete Payment Classes (Strategies) – We created separate classes for each payment method:
+
+    CreditCardPayment → Handles payments via card and hides the credit card details when the transaction is being displayed.
+    PayPalPayment → Uses email to process PayPal transactions.
+    MobileMoney → Requires a phone number for mobile payments.
+    Each of these classes knows how to process its specific payment type, making the system modular.
+
+3.  PaymentContext – This is like the cashier of the system. It doesn’t care how you pay; it just takes your payment method and executes it. It allows the system to switch between payment strategies dynamically.
+
+4️. Main (User Interaction & Control Center) – This handles user input, helps them choose a payment method. It keeps the program running smoothly and avoids unnecessary complexity.
+
+What Did We Learn from This?
+
+Flexibility – Adding new payment methods (e.g., BankTranfers) just requires a new class that follows the QuickPay interface. No need to touch existing code.
+
+Better Organization – Instead of stuffing all logic into Main, each class handles what it knows best. Payments are handled by payment classes, while Main just facilitates the process.
+
+Reusability – If we ever build a web or mobile version of this payment system, we can reuse these classes without rewriting logic.
+
+
+Final Thoughts
+
+The Strategy Pattern helped us create a clean, maintainable, and scalable payment system.
