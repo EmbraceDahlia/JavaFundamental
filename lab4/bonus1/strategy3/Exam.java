@@ -1,12 +1,11 @@
-package lab4.bonus1.strategy2;
+package lab4.bonus1.strategy3;
 
 /***
- * Strategy 2
- * Same class strategy
- * In this strategy, both the child class and parent class are equipped with
- * different implementations(overrides) of the equals method
- * We check for the classes being the same
- * We also check for the instance field values in both classes
+ * Strategy 3
+ * Composition Based strategy
+ * This strategy does not involve inheritance, we don't have to make our
+ * subclass final
+ * The requirement is handle
  */
 public class Exam {
     private String course;

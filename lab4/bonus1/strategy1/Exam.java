@@ -1,15 +1,17 @@
-package lab4.bonus1.strategy2;
+package lab4.bonus1.strategy1;
 
 /***
- * Strategy 2
- * Same class strategy
- * In this strategy, both the child class and parent class are equipped with
- * different implementations(overrides) of the equals method
- * We check for the classes being the same
- * We also check for the instance field values in both classes
+ * Strategy 1
+ * Instance of strategy
+ * In this strategy, equals is considered enough if 2 instances of an object in
+ * this case it will be Exam object are of the same instance
+ * This strategy proceeds to check for instance fields if they have the same
+ * values.
+ * Equals method is only implemented in the parent class
  */
 public class Exam {
     private String course;
+
     private int score;
 
     public Exam(String course, int score) {

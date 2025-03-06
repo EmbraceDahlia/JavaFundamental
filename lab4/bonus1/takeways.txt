@@ -1,0 +1,22 @@
+In this Class Management system, we have Exam and MidtermExam hierarchy.
+We use inheritance where Midterm inherits from Exam. The inheritance here allows us to reuse some fields and construct MidtermExam from the Exam blueprint.
+We override the method equals(), a method used to compare the similarity between different objects.
+We use different strategies as organized in the folders strategy1, strategy2 and strategy3 respectively.
+
+strategy1 - Instanceof Strategy
+- We compare two objects by using instanceof operator.
+- In this strategy, equals is considered enough if 2 instances of Exam are of the same instance - Exam
+- The equals override is done in the parent class. - Exam class
+- We also check if the values of the instance fields in the parent class are the same
+
+
+strategy2 - Same-Class Strategy
+- In this strategy, both the child class and parent class are equipped with different implementations(overrides) of the equals() method
+- We check for the classes being the same using the getClass() method
+ - We also check the values of the instance fields in both classes
+
+strategy3 - Same-Class Strategy
+- We can use this strategy if we do not want/need to implement inheritance
+- We don't need to have to make our subclass final
+
+

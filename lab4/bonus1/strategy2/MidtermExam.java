@@ -1,32 +1,38 @@
 package lab4.bonus1.strategy2;
 
-import java.time.LocalDate;
+/**
+ * MidtermExam inherits from Exam.
+ * MidtermExam class is made final to prevent any further inheritance
+ * We override equals in the subclass now
+ */
+final public class MidtermExam extends Exam {
+    private int bonusPoint;
 
-public class MidtermExam extends Exam {
-    private int passingScore;
-
-    public MidtermExam(String examContent, LocalDate dateAdministered, double score, int passingScore) {
-        super(examContent, dateAdministered, score);
-        this.passingScore = passingScore;
+    public MidtermExam(String course, int score, int bonusPoint) {
+        super(course, score);
+        this.bonusPoint = bonusPoint;
     }
 
-    public int getPassingScore() {
-        return passingScore;
-    }
-
-    @Override
-    public double computeScore() {
-        return super.computeScore() * 0.4;
+    public int getBonusPoint() {
+        return bonusPoint;
     }
 
     @Override
     public boolean equals(Object ob) {
-        if (ob == null) return false;
-        if (getClass() != ob.getClass()) return false;
-        MidtermExam p = (MidtermExam) ob;
-        return p.getExamContent().equals(getExamContent()) &&
-                p.getDateAdministered().equals(getDateAdministered()) &&
-                p.computeScore() == computeScore() &&
-                p.passingScore == passingScore;
+        // Null check
+        if ((ob == null))
+            return false;
+
+        // Class check
+        if (getClass() != ob.getClass())
+            return false;
+
+        MidtermExam midtermExam = (MidtermExam) ob;
+        // boolean comp = this.accountNumber.equals(ba.accountNumber) &&
+        // this.interestRate == ba.interestRate;
+        boolean comp = midtermExam.getCourse().equals(this.getCourse()) && midtermExam.getScore() == this.getScore()
+                && midtermExam.bonusPoint == this.bonusPoint;
+        return comp;
     }
+
 }
