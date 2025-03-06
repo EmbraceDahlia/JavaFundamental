@@ -35,8 +35,8 @@ public class Exam {
         if (ob == null)
             return false;
 
-        // instance of check
-        if (!(ob instanceof Exam))
+        // Class check
+        if (getClass() != ob.getClass())
             return false;
 
         // Instance fields check
