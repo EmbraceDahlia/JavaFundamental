@@ -16,6 +16,7 @@ public class DoublyLinkedList {
 
     //1. adds to the end of the list
     public void addLast(String item) {
+        if (item == null) return;
         Node n = new Node(item);
         Node current = header;
         while (current.next != null) current = current.next;
@@ -25,12 +26,14 @@ public class DoublyLinkedList {
 
     // 2. Remove by passing object
     public boolean remove(String item) {
-        if (header.next == null) return false;
+        if (item == null || header == null || header.next == null) return false;
         Node current = header.next;
         while (current != null) {
             if (current.value.equals(item)) {
-                current.previous.next = current.next;
-                current.next.previous = current.previous;
+                if (current.previous != null)
+                    current.previous.next = current.next;
+                if (current.next != null)
+                    current.next.previous = current.previous;
                 return true;
             }
             current = current.next;
@@ -41,14 +44,17 @@ public class DoublyLinkedList {
     // 3. Remove the First Node
 
     public boolean removeFirst() {
-        if (header.next == null) return false;
+        if (header == null || header.next == null) return false;
         header.next = header.next.next;
+        if (header.next != null)
+            header.next.previous = header;
         return true;
     }
 
     // 4. Prints the list from last to first
     public void printReverse() {
-        if (header.next != null) {
+        System.out.println("Printing reverse");
+        if (header != null && header.next != null) {
             Node current = header.next;
             while (current.next != null) current = current.next;
 
@@ -80,7 +86,7 @@ public class DoublyLinkedList {
         Node previous;
 
         public Node() {
-            this(null);
+//            this(null);
         }
 
         public Node(String val) {
@@ -103,13 +109,16 @@ public class DoublyLinkedList {
         list.addLast("Bob");
         list.addLast("Harry");
         list.addLast("Steve");
-        System.out.println(list);
+        System.out.println("List"+list);
 
         // Call all your implemented Methods
-        list.remove("Harry");
-        list.removeFirst();
-//        list.addLast("Jennie");
-//        list.addLast("Chaeyoung");
+        if (list.remove("Harry"))
+            System.out.println("Removed Harry");
+        if (list.removeFirst())
+            System.out.println("Removed first element");
+        list.addLast("Jennie");
+        System.out.println("Added Jennie");
+        System.out.println("Before reverse:" + list);
         list.printReverse();
     }
 }

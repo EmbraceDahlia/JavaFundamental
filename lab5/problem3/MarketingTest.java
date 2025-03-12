@@ -21,8 +21,8 @@ public class MarketingTest {
         marketing.remove(marketing1);
         System.out.println("New size: " + marketing.size() + "\n");
 
-        Marketing marketing2 = marketing.get(0);
-        System.out.println("First marketing team employee -> " + marketing2);
+        Marketing marketing2 = marketing.get(2);
+        System.out.println("A marketing team employee -> " + marketing2);
         marketing.set(3, new Marketing("Lucy", "Sugar", 5000000));
 
         System.out.println("\nSort by sales amount...");
