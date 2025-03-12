@@ -23,6 +23,9 @@ public class Main {
         teachers.add(new Teacher("Phil", 135000, 12000));
         teachers.add(new Teacher("Tony", 95000, 8000));
 
+        teachers.add(null);
+        teachers.add(new Teacher("Tony", 1000, 500));
+
 
         //Implementation steps
         //Step 1: implement the combine method, to combine the two lists
