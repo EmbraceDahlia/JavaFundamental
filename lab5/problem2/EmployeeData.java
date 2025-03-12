@@ -1,7 +1,7 @@
 package lab5.problem2;
 
 public interface EmployeeData {
-    public String getName();
+    String getName();
 
-    public double getSalary();
+    double getSalary();
 }

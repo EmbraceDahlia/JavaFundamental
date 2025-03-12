@@ -33,14 +33,15 @@ public class Main {
         System.out.println(salarySum);
 
     }
-    private static List<EmployeeData> combine(List<Staff> staffList,List<Teacher> teacherList){
+
+    private static List<EmployeeData> combine(List<Staff> staffList, List<Teacher> teacherList) {
         List<EmployeeData> list = new ArrayList<>();
-        for(EmployeeData e:staffList){
-            if(e!=null)
+        for (EmployeeData e : staffList) {
+            if (e != null)
                 list.add(e);
         }
-        for(EmployeeData e:teacherList){
-            if(e!=null)
+        for (EmployeeData e : teacherList) {
+            if (e != null)
                 list.add(e);
         }
         return list;
