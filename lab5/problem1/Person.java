@@ -1,6 +1,6 @@
 package lab5.problem1;
 
-class Person {
+public class Person {
     private String lastName;
     private String firstName;
     private int age;

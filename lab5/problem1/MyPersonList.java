@@ -37,7 +37,7 @@ public class MyPersonList {
     // 4. Remove the person object by passing its lastname
     public boolean remove(String lastName) {
         if (size == 0 || PersonArray == null) return false;
-        for (int i = 0; i < PersonArray.length; i++) {
+        for (int i = 0; i < size; i++) {
             if (lastName.equals(PersonArray[i].getLast())) {
                 for (int j = i; j < size - 1; j++)
                     PersonArray[j] = PersonArray[j + 1];
@@ -78,6 +78,7 @@ public class MyPersonList {
 
     // To display all the persons list
     public String toString() {
+        if(size == 0) return "List is empty.";
         StringBuilder sb = new StringBuilder("[");
         for (int i = 0; i < size - 1; ++i) {
             sb.append(PersonArray[i] + ", \n");
@@ -98,8 +99,9 @@ public class MyPersonList {
         list.add(new Person("Joe", "Lermon", 53));
         list.add(new Person("Anne", "Dow", 55));
         System.out.println("\nSize() : " + list.size() + "\n" + list);
-        list.remove("Tom");
-        System.out.println("\nSize() : " + list.size() + "\n" + list);
+        if (list.remove("Tom"))
+            System.out.println("Removed Tom");
+        System.out.println("Size() : " + list.size() + "\n" + list);
         System.out.println("\nSearching of Lermon: " + list.find("Lermon"));
         System.out.println(list.get(2));
     }
