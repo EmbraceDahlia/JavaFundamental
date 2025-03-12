@@ -9,8 +9,8 @@ public class Statistics {
      */
     public static double computeSumOfSalaries(List<EmployeeData> aList) {
         double totalSalary = 0;
-        for(EmployeeData d:aList){
-            totalSalary+= d.computeSumOfSalaries();
+        for (EmployeeData d : aList) {
+            totalSalary += d.getSalary();
         }
         return totalSalary;
     }

@@ -1,7 +1,5 @@
 package lab5.problem2;
 
-import java.util.List;
-
 public final class Staff implements EmployeeData {
     private String name;
     private double salary;
@@ -25,8 +23,4 @@ public final class Staff implements EmployeeData {
         return numDependants;
     }
 
-    @Override
-    public double computeSumOfSalaries() {
-        return this.getSalary();
-    }
 }

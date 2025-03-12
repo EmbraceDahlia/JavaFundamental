@@ -1,8 +1,6 @@
 package lab5.problem2;
 
-import java.util.List;
-
-public final class Teacher implements EmployeeData{
+public final class Teacher implements EmployeeData {
     private double bonus;
     private String name;
     private double salary;
@@ -23,10 +21,5 @@ public final class Teacher implements EmployeeData{
 
     public String getName() {
         return name;
-    }
-
-    @Override
-    public double computeSumOfSalaries() {
-        return this.getSalary()+this.getBonus();
     }
 }
