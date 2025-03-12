@@ -1,7 +1,5 @@
 package lab5.problem3;
 
-import java.util.*;
-
 public class Marketing {
     private String employeeName;
     private String productName;
@@ -44,35 +42,15 @@ public class Marketing {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (!this.getClass().equals(obj.getClass())) return false;
-        Marketing mObj = (Marketing) obj;
-//        return (this.employeeName.equals(mObj.employeeName) && this.productName.equals(mObj.productName) && this.salesAmount==mObj.salesAmount);
-        return this.salesAmount == mObj.salesAmount;
+        if (obj == null)
+            return false;
+        if (obj == this)
+            return true;
+        if (obj.getClass() != getClass())
+            return false;
+        Marketing marketing = (Marketing) obj;
+        return marketing.getEmployeeName().equals(this.employeeName)
+                && marketing.getProductName().equals(this.productName)
+                && marketing.getSalesAmount() == this.salesAmount;
     }
-
-    public static void main(String[] args) {
-        List<Marketing> mList = new ArrayList<>();
-        Marketing m1 = new Marketing("Anna", "Roses", 1000);
-        mList.add(m1);
-        mList.add(new Marketing("Bobby Kang", "Baby-breath", 2000));
-        mList.add(new Marketing("Chanyeol Park", "Roses", 3000));
-        mList.add(new Marketing("Kai Kim", "Roses", 4000));
-        mList.add(new Marketing("Jennie Kim", "Plants", 5000));
-
-        mList.remove(m1);
-        System.out.println("Marketing list size: " + mList.size());
-        if (!mList.isEmpty()) {
-            Marketing m = mList.get(mList.size() - 1);
-            System.out.println(m);
-            m.setProductName("New Album J");
-            mList.set(mList.size() - 1, m);
-        }
-
-        MarketingComparator mc=new MarketingComparator();
-        Collections.sort(mList,mc);
-        System.out.println(mList);
-
-    }
-
 }
