@@ -1,4 +1,4 @@
-package lab9;
+package lab9.problem2;
 
 import java.util.LinkedList;
 

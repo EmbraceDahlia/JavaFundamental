@@ -1,4 +1,4 @@
-package lab9;
+package lab9.problem3;
 
 import java.util.Stack;
 
