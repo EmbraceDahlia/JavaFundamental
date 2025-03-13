@@ -5,8 +5,8 @@ import java.util.Stack;
 public class BrowserHistory {
 
     private String currentUrl;
-    Stack<String> history = new Stack<>();
-    Stack<String> forwardUrls = new Stack<>();
+    private Stack<String> history = new Stack<>();
+    private Stack<String> forwardUrls = new Stack<>();
 
     public BrowserHistory(String currentUrl) {
         this.currentUrl = currentUrl;
@@ -35,20 +35,19 @@ public class BrowserHistory {
             return;
         }
         String previousUrl = history.pop();
-        System.out.println("Back to: " + previousUrl);
         forwardUrls.push(this.currentUrl);
         this.currentUrl = previousUrl;
+        System.out.println("Back to: " + previousUrl);
     }
 
     public void forward() {
         if (forwardUrls.size() == 0) {
-            System.out.println("No forward history. ");
+            System.out.println("No forward history.");
             return;
         }
         String forwardUrl = forwardUrls.pop();
         this.currentUrl = forwardUrl;
         System.out.println("Forward to: " + forwardUrl);
-
     }
 
     public static void main(String[] args) {

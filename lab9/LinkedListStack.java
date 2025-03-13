@@ -21,7 +21,6 @@ public class LinkedListStack {
     }
 
     public Integer pop() {
-
         if (list.isEmpty()) {
             return null;
         }
