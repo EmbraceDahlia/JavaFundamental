@@ -9,6 +9,7 @@ public class DoublyLinkedList {
     }
 
     public void addFirst(String item) {
+        if (item == null) return;
         Node n = new Node(header, item, header.next);
         if (header.next != null) header.next.previous = n;
         header.next = n;
@@ -26,7 +27,7 @@ public class DoublyLinkedList {
 
     // 2. Remove by passing object
     public boolean remove(String item) {
-        if (item == null || header == null || header.next == null) return false;
+        if (item == null || header.next == null) return false;
         Node current = header.next;
         while (current != null) {
             if (current.value.equals(item)) {
@@ -109,7 +110,7 @@ public class DoublyLinkedList {
         list.addLast("Bob");
         list.addLast("Harry");
         list.addLast("Steve");
-        System.out.println("List"+list);
+        System.out.println("List" + list.toString());
 
         // Call all your implemented Methods
         if (list.remove("Harry"))

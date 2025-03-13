@@ -1,6 +1,7 @@
 package lab5.problem1;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class MyPersonList {
     private final int INITIAL_LENGTH = 3;
@@ -54,10 +55,10 @@ public class MyPersonList {
     }
 
     public void insert(Person p, int pos) {
-        if (pos > size - 1 || pos < 0)
+        if (pos >= size || pos < 0)
             return;
         if (p == null) return;
-        if (pos == PersonArray.length) {
+        if (size == PersonArray.length) {
             resize();
         }
         // Shift elements to the right to make space for the new element
@@ -103,6 +104,6 @@ public class MyPersonList {
             System.out.println("Removed Tom");
         System.out.println("Size() : " + list.size() + "\n" + list);
         System.out.println("\nSearching of Lermon: " + list.find("Lermon"));
-        System.out.println(list.get(2));
+        System.out.println("Getting a person at index 2: "+list.get(2));
     }
 }

@@ -24,18 +24,19 @@ public class MarketingTest {
         Marketing marketing2 = marketing.get(2);
         System.out.println("A marketing team employee -> " + marketing2);
         marketing.set(3, new Marketing("Lucy", "Sugar", 5000000));
+        System.out.println("Updated sugar product employee");
+        System.out.println(marketing);
 
         System.out.println("\nSort by sales amount...");
         //Collections.sort(marketing, new AmountComparator());
         marketing.sort(new AmountComparator());
         System.out.println(marketing);
         List<Marketing> moreThan1000 = listMoreThan1000(marketing);
-        System.out.println("More than 1000\n" + moreThan1000);
+        System.out.println("Employees with more than 1000 sales amount\n" + moreThan1000);
         //Collections.sort(moreThan1000, new NameComparator());
         moreThan1000.sort(new NameComparator());
         System.out.println("Sort by name...");
         System.out.println(moreThan1000);
-
     }
 
     public static List<Marketing> listMoreThan1000(List<Marketing> list) {
