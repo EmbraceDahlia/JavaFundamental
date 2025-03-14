@@ -55,8 +55,7 @@ public class MyPersonList {
     }
 
     public void insert(Person p, int pos) {
-        if (pos >= size || pos < 0)
-            return;
+        if (pos >= size || pos < 0) return;
         if (p == null) return;
         if (size == PersonArray.length) {
             resize();
@@ -79,7 +78,7 @@ public class MyPersonList {
 
     // To display all the persons list
     public String toString() {
-        if(size == 0) return "List is empty.";
+        if (size == 0) return "List is empty.";
         StringBuilder sb = new StringBuilder("[");
         for (int i = 0; i < size - 1; ++i) {
             sb.append(PersonArray[i] + ", \n");
@@ -100,10 +99,9 @@ public class MyPersonList {
         list.add(new Person("Joe", "Lermon", 53));
         list.add(new Person("Anne", "Dow", 55));
         System.out.println("\nSize() : " + list.size() + "\n" + list);
-        if (list.remove("Tom"))
-            System.out.println("Removed Tom");
+        if (list.remove("Tom")) System.out.println("Removed Tom");
         System.out.println("Size() : " + list.size() + "\n" + list);
         System.out.println("\nSearching of Lermon: " + list.find("Lermon"));
-        System.out.println("Getting a person at index 2: "+list.get(2));
+        System.out.println("Getting a person at index 2: " + list.get(2));
     }
 }
