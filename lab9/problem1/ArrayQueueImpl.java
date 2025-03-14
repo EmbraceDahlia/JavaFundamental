@@ -1,6 +1,6 @@
 package lab9.problem1;
 
-import java.util.Arrays;
+
 
 public class ArrayQueueImpl {
 
@@ -10,20 +10,21 @@ public class ArrayQueueImpl {
     private int front;
     private int rear;
 
-    //default
     ArrayQueueImpl() {
         this.arr = new Integer[DEFAULT_CAPACITY];
+        this.size = 0;
         this.front = 0;
         this.rear = -1;
-        this.size = 0;
     }
 
-    //parametirised
-    ArrayQueueImpl(int size, Integer[] arr, int front, int rear) {
-        this.size = size;
-        this.arr = (arr == null || arr.length == 0) ? new Integer[DEFAULT_CAPACITY] : Arrays.copyOf(arr, arr.length);
-        this.front = front;
-        this.rear = rear;
+    ArrayQueueImpl(int capacity) {
+        if (capacity <= 0) {
+        throw new IllegalArgumentException("Queue capacity must be greater than 0");
+    }
+        this.arr = new Integer[capacity];
+        this.size = 0;
+        this.front = 0;
+        this.rear = -1;
 
     }
 

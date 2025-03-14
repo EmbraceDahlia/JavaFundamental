@@ -2,7 +2,7 @@ package lab9.problem1;
 
 public class TestMain {
     public static void main(String[] args) {
-        ArrayQueueImpl queue = new ArrayQueueImpl();
+        ArrayQueueImpl queue = new ArrayQueueImpl(0);
 
 // Enqueue elements
         queue.enqueue(10);
@@ -21,11 +21,11 @@ public class TestMain {
         System.out.println("Queue after dequeue: " + queue);
 
         // Test resizing
-        queue.enqueue(60);
-        queue.enqueue(70);
-        queue.enqueue(80);
-        queue.enqueue(90);
-        queue.enqueue(100);
+        queue.enqueue(66);
+        queue.enqueue(72);
+        queue.enqueue(85);
+        queue.enqueue(93);
+        queue.enqueue(105);
         queue.enqueue(110);
         queue.enqueue(120);
 
