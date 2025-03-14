@@ -74,7 +74,6 @@ public class ArrayQueueImpl {
         Integer[] newArr = new Integer[newCapacity];
 
         for (int i = 0; i < size; i++) {
-            // newArr[i] = arr[(front + i) % DEFAULT_CAPACITY];
             newArr[i] = arr[(front + i) % arr.length];
         }
         arr = newArr;
