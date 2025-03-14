@@ -2,7 +2,7 @@ package lab9.problem1;
 
 public class TestMain {
     public static void main(String[] args) {
-        ArrayQueueImpl queue = new ArrayQueueImpl(0);
+        ArrayQueueImpl queue = new ArrayQueueImpl();
 
 // Enqueue elements
         queue.enqueue(10);
