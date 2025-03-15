@@ -28,7 +28,7 @@ public class Key {
 		if (getClass() != obj.getClass())
 			return false;
 		Key key = (Key) obj;
-		return firstName.equals(key.getFirstName()) && lastName.equals(key.getLastName());
+		return this.firstName.equals(key.getFirstName()) && this.lastName.equals(key.getLastName());
 	}
 
 	@Override
