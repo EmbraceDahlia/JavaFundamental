@@ -1,4 +1,4 @@
-package lesson11.problem2;
+package lab11.problem2;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,4 +1,6 @@
-package lesson11.prob2;
+package lab11.problem3;
+
+
 
 class Book {
     private String ISBN;
@@ -15,6 +17,10 @@ class Book {
     public String getISBN() {
         return ISBN;
     }
+
+    public String getTitle() {
+        return title;
+    }
     public void setBorrowed(boolean borrowed) {
         isBorrowed = borrowed;
     }
@@ -23,9 +29,8 @@ class Book {
     }
     @Override
     public String toString() {
-//        return STR."Book{ISBN='\{ISBN}', title='\{title}', author='\{author}', isBorrowed=\{isBorrowed}}";
-
         return String.format("Book{ISBN='%s', title='%s', author='%s', isBorrowed=%b}",
                 ISBN, title, author, isBorrowed);
     }
 }
+

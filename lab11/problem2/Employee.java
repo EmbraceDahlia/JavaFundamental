@@ -1,4 +1,4 @@
-package lesson11.problem2;
+package lab11.problem2;
 
 public class Employee {
     private String name;
